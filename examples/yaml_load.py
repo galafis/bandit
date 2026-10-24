@@ -1,5 +1,7 @@
 import json
 import yaml
+from yaml import BaseLoader
+from yaml import CBaseLoader
 from yaml import CSafeLoader
 from yaml import SafeLoader
 
@@ -26,3 +28,18 @@ yaml.load("{}", SafeLoader)
 yaml.load("{}", yaml.SafeLoader)
 yaml.load("{}", CSafeLoader)
 yaml.load("{}", yaml.CSafeLoader)
+
+yaml.load("{}", Loader=yaml.BaseLoader)
+yaml.load("{}", Loader=yaml.CBaseLoader)
+yaml.load("{}", Loader=BaseLoader)
+yaml.load("{}", Loader=CBaseLoader)
+yaml.load("{}", BaseLoader)
+yaml.load("{}", yaml.BaseLoader)
+yaml.load("{}", CBaseLoader)
+yaml.load("{}", yaml.CBaseLoader)
+
+# These loaders can still construct arbitrary Python objects.
+yaml.load("{}", Loader=yaml.CLoader)
+yaml.load("{}", yaml.CLoader)
+yaml.load("{}", Loader=yaml.UnsafeLoader)
+yaml.load("{}", yaml.UnsafeLoader)
