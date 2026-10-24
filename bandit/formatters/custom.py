@@ -77,6 +77,7 @@ def report(manager, fileobj, sev_level, conf_level, template=None):
         "col": lambda issue: issue.col_offset,
         "end_col": lambda issue: issue.end_col_offset,
         "test_id": lambda issue: issue.test_id,
+        "test_name": lambda issue: issue.test,
         "severity": lambda issue: issue.severity,
         "msg": lambda issue: issue.text,
         "confidence": lambda issue: issue.confidence,

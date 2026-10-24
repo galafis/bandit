@@ -63,3 +63,18 @@ class CustomFormatterTests(testtools.TestCase):
             )
             self.assertEqual(self.issue.severity, data["severity"])
             self.assertEqual(self.issue.text, data["message"])
+
+    def test_report_test_name(self):
+        with open(self.tmp_fname, "w") as tmp_file:
+            custom.report(
+                self.manager,
+                tmp_file,
+                self.issue.severity,
+                self.issue.confidence,
+                template="{test_name}: {msg}",
+            )
+
+        with open(self.tmp_fname) as tmp_file:
+            self.assertEqual(
+                f"{self.check_name}: {self.issue.text}\n", tmp_file.read()
+            )

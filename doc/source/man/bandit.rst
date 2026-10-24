@@ -83,7 +83,7 @@ CUSTOM FORMATTING
 
 Available tags:
 
-    {abspath}, {relpath}, {line},  {test_id},
+    {abspath}, {relpath}, {line}, {test_id}, {test_name},
     {severity}, {msg}, {confidence}, {range}
 
 Example usage:

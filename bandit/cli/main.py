@@ -400,7 +400,7 @@ def main():
 
     Available tags:
 
-        {abspath}, {relpath}, {line}, {col}, {test_id},
+        {abspath}, {relpath}, {line}, {col}, {test_id}, {test_name},
         {severity}, {msg}, {confidence}, {range}
 
     Example usage:
